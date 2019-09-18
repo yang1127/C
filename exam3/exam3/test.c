@@ -302,5 +302,6 @@ int main()
 	printf("%d", count + 1);
 	system("pause");
 	return 0;
+
 }
 
