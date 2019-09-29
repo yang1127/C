@@ -1,5 +1,9 @@
-﻿#include <stdio.h>
+﻿#define  _CRT_SECURE_NO_WARNINGS 1
+
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+//#include <windows.h>
 
 //int main()
 //{
@@ -120,39 +124,204 @@
 //	return 0; 
 //}
 
-void print_arr1(int arr[3][5], int row, int col) //打印二维数组
-{
-	int i = 0;
-	for (i = 0; i < row; i++) 
-	{
-		for (int j = 0; j < col; j++)
-		{ 
-			printf("%d ", arr[i][j]);
-		} 
-		printf("\n");
-	}
-} 
+//void print_arr1(int arr[3][5], int row, int col) //打印二维数组
+//{
+//	int i = 0;
+//	for (i = 0; i < row; i++) 
+//	{
+//		for (int j = 0; j < col; j++)
+//		{ 
+//			printf("%d ", arr[i][j]);
+//		} 
+//		printf("\n");
+//	}
+//} 
+//
+//void print_arr2(int(*arr)[5], int row, int col)
+//{
+//	int i = 0;
+//	for (i = 0; i < row; i++)
+//	{
+//		for (int j = 0; j < col; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[3][5] = { 1,2,3,4,5,6,7,8,9,10 };
+//	print_arr1(arr, 3, 5);  //数组名arr，表示首元素的地址，但二维数组的首元素是二维数组的第一行
+//							这里传递的arr，其实相当于第一行的地址，是一维数组的地址，可以数组指针来接收 
+//	print_arr2(arr, 3, 5); 
+//
+//	system("pause");
+//	return 0;
+//}
 
-void print_arr2(int(*arr)[5], int row, int col)
-{
-	int i = 0;
-	for (i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
-			printf("%d ", arr[i][j]);
-		}
-		printf("\n");
-	}
-}
+//void print(int *p, int sz) 
+//{ 
+//	int i = 0;
+//	for (i = 0; i < sz; i++) 
+//	{ 
+//		printf("%d\n", *(p + i)); 
+//	} 
+//} 
+//
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9 };
+//	int *p = arr;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//
+//	print(p, sz);	//一级指针p,传给函数 
+//
+//	system("pause");
+//	return 0;
+//}
 
-int main()
-{
-	int arr[3][5] = { 1,2,3,4,5,6,7,8,9,10 };
-	print_arr1(arr, 3, 5);  //数组名arr，表示首元素的地址，但二维数组的首元素是二维数组的第一行
-							//这里传递的arr，其实相当于第一行的地址，是一维数组的地址，可以数组指针来接收 
-	print_arr2(arr, 3, 5); 
 
-	system("pause");
-	return 0;
-}
+//void test(int** ptr)
+//{ 
+//	printf("num = %d\n", **ptr);
+//} 
+//
+//int main()
+//{
+//	int n = 10;  
+//	int*p = &n;
+//	int **pp = &p;
+//	test(pp); 
+//	test(&p);
+//
+//	system("pause");
+//	return 0;
+//}
+
+
+//int add(int a, int b) //加
+//{
+//	return a + b;
+//}
+//
+//int sub(int a, int b) //减
+//{
+//	return a - b;
+//}
+//
+//int mul(int a, int b) //乘
+//{
+//	return a * b;
+//}
+//
+//int div(int a, int b) //除
+//{
+//	return a / b;
+//}
+//
+//int main()
+//{
+//	int x, y;
+//	int num = 1;
+//	int tmp = 0;
+//	int (*p[5])(int x, int y) = { 0, add, sub, mul, div}; //转移表，注意div函数调用库函数不能同时使用stdio、stdlib两个库函数
+//	while (num)
+//	{
+//		printf("***********************\n"); //菜单
+//		printf("** 1.add   2.sub     **\n");
+//		printf("** 3.mul   4.div     **\n");
+//		printf("***********************\n");
+//		printf("请输入要执行的数字：");
+//		scanf("%d", &num);
+//		if (num >= 1 && num <= 4)
+//		{
+//			printf("请输入要进行操作的两个数x,y：");
+//			scanf("%d %d", &x, &y);
+//			tmp = (*p[num])(x, y);
+//		}
+//		else
+//		{
+//			printf("输入的数字有误！");
+//			return ;
+//		}
+//		printf("tmp = %d\n", tmp);
+//		Sleep(5000); //windows 使用Sleep，参数为毫秒,表示让程序睡眠/暂停一段时间
+//		system("cls"); //清屏
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+//int cmp(const void *p1, const void *p2)
+//{
+//	return (*(int *)p1 > *(int *)p2);
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1, 7, 5, 6, 4, 3, 10, 8, 2, 9 };
+//	int i = 0;
+//
+//	qsort(arr, sizeof(arr) / sizeof(arr[0]), sizeof(int), cmp);
+//	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//
+//	system("pause");
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int a[3][4] = { 0 }; 
+//	
+//	printf("%d\n", sizeof(a));
+//	printf("%d\n", sizeof(a[0][0])); 
+//	printf("%d\n", sizeof(a[0]));
+//	printf("%d\n", sizeof(a[0] + 1));
+//	printf("%d\n", sizeof(*(a[0] + 1))); 
+//	printf("%d\n", sizeof(a + 1));
+//	printf("%d\n", sizeof(*(a + 1))); 
+//	printf("%d\n", sizeof(&a[0] + 1));
+//	printf("%d\n", sizeof(*(&a[0] + 1)));
+//	printf("%d\n", sizeof(*a));
+//	printf("%d\n", sizeof(a[3]));
+//	
+//	system("pause");
+//	return 0;
+//}
+
+//int main() 
+//{ 
+//	int a[5] = { 1, 2, 3, 4, 5 };
+//	int *ptr = (int *)(&a + 1);
+//	printf("%d,%d", *(a + 1), *(ptr - 1)); //2 5
+//
+//	system("pause");
+//	return 0;
+//}
+
+//结构体的大小是20个字节
+//struct Test 
+//{ 
+//	int Num;
+//	char *pcName; 
+//	short sDate;   
+//	char cha[2]; 
+//	short sBa[4];
+//}*p;
+//
+//假设p 的值为0x100000
+// int main() 
+// {   
+//	 printf("%p\n", p + 0x1); //0x1000014  加20
+//	 printf("%p\n", (unsigned long)p + 0x1);  //0x100001
+//	 printf("%p\n", (unsigned int*)p + 0x1);  //0x100004
+//	 
+//	 system("pause");
+//	 return 0;
+// }
