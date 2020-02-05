@@ -17,6 +17,7 @@ int main()
 
 
 ////求最小公倍数
+
 //int main()
 //{
 //	int a, b, max, min;
@@ -42,6 +43,7 @@ int main()
 //	}
 //
 //	system("pause");
+//
 //	return 0;
 //}
 
@@ -70,5 +72,6 @@ int main()
 //	}
 //
 //	system("pause");
+//
 //	return 0;
 //}
