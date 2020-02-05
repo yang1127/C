@@ -1,9 +1,6 @@
 ﻿#include<stdio.h>
 #include<stdlib.h>
 
-
-#include <stdio.h>
-
 int main()
 {
 	int i = 0, a = 0, b = 2, c = 3, d = 4; 
