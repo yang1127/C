@@ -11,6 +11,7 @@ int main()
 
 	printf("%d %d", i, j); // 2 1
 	system("pause");
+	
 	return 0;
 }
 
