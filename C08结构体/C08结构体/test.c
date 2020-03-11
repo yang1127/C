@@ -91,45 +91,45 @@
 //} 
 
 //计算结构体
-//struct S1 
-//{ 
-//	char c1;
-//	int i; 
-//	char c2;
-//}; 
-//
-//struct S2
-//{ 
-//	char c1;  
-//	char c2; 
-//	int i;
-//};
-//
-//struct S3 
-//{    
-//	double d;  
-//	char c;   
-//	int i;
-//};
-//
-//struct S4 
-//{  
-//	char c1;  
-//	struct S3 s3; 
-//	double d;
-//};
-//
-//int main()
-//{
-//
-//	printf("%d\n", sizeof(struct S1)); //12
-//	printf("%d\n", sizeof(struct S2)); //8
-//	printf("%d\n", sizeof(struct S3)); //16
-//	printf("%d\n", sizeof(struct S4)); //32
-//
-//	system("pause");
-//	return 0;
-//}
+struct S1 
+{ 
+	char c1;
+	int i; 
+	char c2;
+}; 
+
+struct S2
+{ 
+	char c1;  
+	char c2; 
+	int i;
+};
+
+struct S3 
+{    
+	double d;  
+	char c;   
+	int i;
+};
+
+struct S4 
+{  
+	char c1;  
+	struct S3 s3; 
+	double d;
+};
+
+int main()
+{
+
+	printf("%d\n", sizeof(struct S1)); //8
+	printf("%d\n", sizeof(struct S2)); //12
+	printf("%d\n", sizeof(struct S3)); //16
+	printf("%d\n", sizeof(struct S4)); //32
+
+	system("pause");
+	return 0;
+}
 
 //struct A
 //{
@@ -208,23 +208,24 @@
 //	return 0;
 //}
 
-union Un1 
-{ 
-	char c[5]; 
-	int i;
-}; 
-
-union Un2
-{
-	short c[7]; 
-	int i; 
-}; 
-
- int main()
-{
-	printf("%d\n", sizeof(union Un1)); //8
-	printf("%d\n", sizeof(union Un2)); //16
-
-	system("pause");
-	return 0;
-}
+//union Un1 
+//{ 
+//	char c[5]; 
+//	int i;
+//}; 
+//
+//union Un2
+//{
+//	short c[7]; 
+//	int i; 
+//}; 
+//
+// int main()
+//{
+//	printf("%d\n", sizeof(union Un1)); //8
+//	printf("%d\n", sizeof(union Un2)); //16
+//
+//	system("pause");
+//	return 0;
+//}
+//

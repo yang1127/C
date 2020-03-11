@@ -454,34 +454,68 @@
 //}
 
 //memmove
-void* memmove(void* dst, const void* src, size_t size)
-{
-	assert(dst && src);
-	char* dst_ = dst;
-	const char* src_ = src;
+//void* memmove(void* dst, const void* src, size_t size)
+//{
+//	assert(dst && src);
+//	char* dst_ = dst;
+//	const char* src_ = src;
+//
+//	if (src_ < dst_ && dst_ < src_ + size) //从后往前拷贝
+//	{
+//		for (int i = size - 1; i >= 0; --i)
+//		{
+//			dst_[i] = src_[i];		
+//		}
+//	}
+//	else //从前往后
+//	{
+//		for (size_t i = size - 1; i < size; ++i)
+//		{
+//			dst_[i] = src_[i];
+//		}
+//	}
+//
+//	return dst;
+//}
+//
+//int main()
+//{
+//	int a1[10] = { 1, 2, 3, 4, 5 };
+//	memmove(a1 + 3, a1, 5 * sizeof(int)); 
+//
+//	system("pause");
+//	return 0;
+//}
 
-	if (src_ < dst_ && dst_ < src_ + size) //从后往前拷贝
-	{
-		for (int i = size - 1; i >= 0; --i)
-		{
-			dst_[i] = src_[i];		
-		}
-	}
-	else //从前往后
-	{
-		for (size_t i = size - 1; i < size; ++i)
-		{
-			dst_[i] = src_[i];
-		}
-	}
 
-	return dst;
-}
+//memcmp
+//int main()
+//{
+//	char buffer1[] = "DWgaOtP12df0";
+//	char buffer2[] = "DWGAOTP12DF0";
+//
+//	int n;
+//	n = memcmp(buffer1, buffer2, sizeof(buffer1));
+//
+//	if (n > 0) 
+//		printf("'%s' is greater than '%s'.\n", buffer1, buffer2);
+//	else if (n < 0) 
+//		printf("'%s' is less than '%s'.\n", buffer1, buffer2);
+//	else 
+//		printf("'%s' is the same as '%s'.\n", buffer1, buffer2);
+//
+//	system("pause");
+//	return 0;
+//}//
+////'DWgaOtP12df0' is greater than 'DWGAOTP12DF0'.
+
+//memset
 
 int main()
 {
-	int a1[10] = { 1, 2, 3, 4, 5 };
-	memmove(a1 + 3, a1, 5 * sizeof(int)); 
+	char str[] = "almost every programmer should know memset!";
+	memset(str, '-', 6);
+	puts(str); //------ every programmer should know memset!
 
 	system("pause");
 	return 0;

@@ -168,59 +168,155 @@
 //	return 0;
 //}
 
-//猜数字游戏
-void menu() 
-{
-	printf("**********************************\n");
-	printf("*************1.play***************\n");
-	printf("*************0.exit***************\n"); 
-	printf("**********************************\n");
-} 
+////猜数字游戏
+//void menu() 
+//{
+//	printf("**********************************\n");
+//	printf("*************1.play***************\n");
+//	printf("*************0.exit***************\n"); 
+//	printf("**********************************\n");
+//} 
+//
+//void game() 
+//{
+//	int random_num = rand()%100+1; //rand（）生成0-32767的随机数
+//	int input = 0;  
+//	while(1)
+//	{     
+//		printf("请输入猜的数字0-99>:");    
+//		scanf("%d", &input); 
+//		if(input > random_num) 
+//		{        
+//			printf("猜大了\n"); 
+//		}      
+//		else if(input < random_num) 
+//		{           
+//			printf("猜小了\n");
+//		}      
+//		else     
+//		{           
+//			printf("恭喜你，猜对了\n");     
+//			break;   
+//		}   
+//	}
+//} 
+//int main() 
+//{    
+//	int input = 0;  
+//	srand((unsigned)time(NULL)); //设置起点
+//	do  
+//	{  
+//		menu(); 
+//		printf("请选择>:"); 
+//        scanf("%d", &input); 
+//       switch (input) 
+//	   { 
+//	   case 1: 
+//           game();   
+//	   	   break;       
+//	   case 0:  
+//           break;    
+//	   default:        
+//		   printf("选择错误,请重新输入!\n");
+//		   break;
+//	   }  
+//	}
+//	while (input);  
+//	return 0; 
+//}
 
-void game() 
+
+int main(void)
 {
-	int random_num = rand()%100+1; //rand（）生成0-32767的随机数
-	int input = 0;  
-	while(1)
-	{     
-		printf("请输入猜的数字0-99>:");    
-		scanf("%d", &input); 
-		if(input > random_num) 
-		{        
-			printf("猜大了\n"); 
-		}      
-		else if(input < random_num) 
-		{           
-			printf("猜小了\n");
-		}      
-		else     
-		{           
-			printf("恭喜你，猜对了\n");     
-			break;   
-		}   
+	int n = 1;
+	while (n != 0) {
+		printf("选择你要进行的运算：\n1.加法；2.减法；3.乘法；4；除法；0.退出\n");
+		scanf("%d", &n);
+		if (n == 0)
+		{
+			break;
+		}
+		switch (n)
+		{
+		case 1:
+		{
+
+			int a;
+			double e = 0;
+			printf("请输入相加数字的个数\n");
+			scanf("%d", &a);
+			for (int i = 1; i <= a; i++)
+			{
+				printf("请输入第%d个数:\n", i);
+				double m;
+				scanf("%lf", &m);
+				e += m;
+			}
+			printf("和为%f\n", e);
+
+		}
+		break;
+		case 2:
+		{
+			int b;
+			int f;
+			printf("请输入相减数字的个数\n");
+			scanf("%d", &b);
+			for (int i = 1; i <= b; i++)
+			{
+				int o;
+				printf("请输入第%d个数:\n", i);
+				scanf("%d", &o);
+				if (i > 1)
+				{
+					f -= o;
+					continue;
+				}
+				f = o;
+			}
+			printf("差为%d\n", f);
+			break;
+		}
+		case 3:
+		{
+			int c;
+			int g = 1;
+			printf("请输入相乘数字的个数\n");
+			scanf("%d", &c);
+			for (int i = 1; i <= c; i++)
+			{
+				int p;
+				printf("请输入第%d个数:\n", i);
+				scanf("%d", &p);
+				g *= p;
+			}
+			printf("乘为%d\n", g);
+		}
+		break;
+		case 4:
+		{
+			int d;
+			int h = 1;
+			printf("请输入相除数字的个数\n");
+			scanf("%d", &d);
+			for (int i = 1; i <= d; i++)
+			{
+				int q;
+				printf("请输入第%d个数:\n", i);
+				scanf("%df", &q);
+				if (i > 1)
+				{
+					h /= q;
+					continue;
+				}
+				h = q;
+			}
+			printf("除为%d\n", h);
+		}
+		break;
+		default:
+			break;
+		}
 	}
-} 
-int main() 
-{    
-	int input = 0;  
-	srand((unsigned)time(NULL)); //设置起点
-	do  
-	{  
-		menu(); 
-		printf("请选择>:"); 
-        scanf("%d", &input); 
-       switch (input) 
-	   { 
-	   case 1: 
-           game();   
-	   	   break;       
-	   case 0:  
-           break;    
-	   default:        
-		   printf("选择错误,请重新输入!\n");
-		   break;
-	   }  
-	}
-	while (input);  
-	return 0; 
+	return 0;
 }
