@@ -6,10 +6,10 @@
 //int main()
 //{
 //	int a = 10000;
-//	FILE* pf = fopen("test.txt", "wb");
-//	//fwrite(&a, 4, 1, pf);//二进制的形式写到文件中
+//	FILE* pf = fopen("test.txt", "wb");//b -> 二进制
+//	//fwrite(&a, 4, 1, pf);//二进制的形式写到文件中 
 //
-//	char buff[10]; //字符串形式
+//	char buff[10]; //字符串形式 没有b
 //	itoa(a, buff, 10);
 //	fputs(buff, pf);
 //
@@ -20,7 +20,7 @@
 
 int main()
 {
-	FILE* fp1 = fopen("test.txt", "w");
+	FILE* fp1 = fopen("test.txt", "w"); //w覆盖写、a追加写
 	if (fp1 == NULL)
 	{
 		printf("打开文件失败\n");
